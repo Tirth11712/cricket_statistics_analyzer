@@ -1,0 +1,73 @@
+
+========================================================================
+ DATA LOADING & CLEANING
+========================================================================
+Raw records loaded     : 61
+Duplicate rows removed : 1
+Missing values         : {'BallsFaced': 1, 'RunsConceded': 1}
+Clean records          : 60 | Teams: 8 | Roles: 3
+
+========================================================================
+ MILESTONE 1 : METRIC CALCULATION (Strike Rate & Economy)
+========================================================================
+Formulas used:
+  Strike Rate    = (Runs / Balls Faced) * 100
+  Bowling Economy= Runs Conceded / (Balls Bowled / 6)
+  Bowling S.Rate = Balls Bowled / Wickets
+
+Top 5 Strike Rates (min 50 balls faced):
+          Player               Team        Role  Runs  BallsFaced  StrikeRate
+     Andre Blitz     Kolkata Tigers All-rounder   410         198      207.07
+Venkatesh Pandya       Punjab Lions      Bowler   105          64      164.06
+    Prasidh Pant Rajasthan Warriors      Bowler    98          60      163.33
+  Arshdeep Kohli     Kolkata Tigers      Bowler   101          62      162.90
+     Axar Sharma    Mumbai Strikers     Batsman   434         282      153.90
+
+Best 5 Bowling Economies (min 10 overs):
+       Player                Team        Role  Overs  RunsConceded  Wickets  Economy
+ Rashid Miser Hyderabad Sunrisers      Bowler  56.00           252       24     4.50
+Kuldeep Patel       Chennai Kings      Bowler  47.00           283       19     6.02
+ Tushar Singh    Delhi Daredevils All-rounder  33.20           210        9     6.33
+  Rajat Kumar    Delhi Daredevils All-rounder  18.50           124       12     6.70
+ Dhruv Pandya       Chennai Kings      Bowler  38.30           264       20     6.89
+
+Average metrics by role:
+             Players  AvgStrikeRate  AvgEconomy
+Role                                           
+All-rounder       16         135.46        8.27
+Batsman           28         131.53        8.89
+Bowler            16         116.27        7.95
+
+========================================================================
+ MILESTONE 2 : OUTLIER DETECTION (IQR method)
+========================================================================
+Strike Rate -> Q1=119.7 Q3=142.0 IQR=22.3 bounds=[86.2, 175.5] outliers=3
+      Player                Team        Role  BallsFaced  StrikeRate    Type
+ Andre Blitz      Kolkata Tigers All-rounder         198      207.07 High SR
+Chris Anchor        Punjab Lions     Batsman         232       85.34  Low SR
+ Umran Yadav Hyderabad Sunrisers      Bowler          54       81.48  Low SR
+
+Economy -> Q1=7.32 Q3=8.89 IQR=1.57 bounds=[4.96, 11.24] outliers=2
+      Player                Team   Role  Overs  Economy  Wickets                  Type
+ Liam Costly    Delhi Daredevils Bowler  40.00    14.00        7 Expensive (High Econ)
+Rashid Miser Hyderabad Sunrisers Bowler  56.00     4.50       24 Economical (Low Econ)
+
+Outlier report saved -> outputs/outlier_report.txt
+
+========================================================================
+ SCATTER PLOTS
+========================================================================
+Scatter plot saved -> outputs/scatter_strike_rate.png
+Scatter plot saved -> outputs/scatter_economy.png
+Scatter plot saved -> outputs/scatter_allrounder.png
+
+========================================================================
+ SUMMARY
+========================================================================
+Players analysed     : 60
+Strike Rate outliers : 3 | Economy outliers: 2
+Highest Strike Rate  : Andre Blitz (207.1)
+Best Economy         : Rashid Miser (4.50)
+Outputs: players_with_metrics.csv, outliers.csv, outlier_report.txt, 3 scatter plots
+
+Analysis complete.

@@ -1,0 +1,6 @@
+PlayerID,Player,Team,Role,Matches,Innings,Runs,BallsFaced,Fours,Sixes,NotOuts,BallsBowled,RunsConceded,Wickets,StrikeRate,BattingAvg,Overs,Economy,BowlingSR,SR_Outlier,Type,Metric,Econ_Outlier
+P048,Umran Yadav,Hyderabad Sunrisers,Bowler,10,10,44,54,3,1,0,259,316,21,81.48,4.4,43.2,7.32,12.33,True,Low SR,StrikeRate,
+P057,Andre Blitz,Kolkata Tigers,All-rounder,12,11,410,198,28,26,5,210,360,9,207.07,68.33,35.0,10.29,23.33,True,High SR,StrikeRate,
+P058,Chris Anchor,Punjab Lions,Batsman,11,11,198,232,14,2,1,0,0,0,85.34,19.8,0.0,,,True,Low SR,StrikeRate,
+P059,Liam Costly,Delhi Daredevils,Bowler,10,4,22,20,1,1,2,240,560,7,110.0,11.0,40.0,14.0,34.29,,Expensive (High Econ),Economy,True
+P060,Rashid Miser,Hyderabad Sunrisers,Bowler,14,5,48,40,3,2,3,336,252,24,120.0,24.0,56.0,4.5,14.0,,Economical (Low Econ),Economy,True
